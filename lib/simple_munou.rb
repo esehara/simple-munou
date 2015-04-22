@@ -32,6 +32,14 @@ module SimpleMunou
       end
     end
 
+    def pattern=(talk_pattern)
+      if talk_pattern.class == Array
+        @pattern = talk_pattern
+      else
+        fail TypeError, "Pattern must be Array."
+      end
+    end
+    
     def say(variables = nil)
       @variables = variables
       @variables = {} if @variables.nil?
