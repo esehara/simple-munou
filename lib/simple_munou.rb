@@ -33,10 +33,18 @@ module SimpleMunou
     end
 
     def say
+      @variables = {}
       @pattern.map do |p|
         case p
         when Fixnum
           choice_words p
+        when Symbol
+          key, kind_num = p.to_s.split("_")
+          if value = @variables[key]
+            value
+          else
+            @variables[key] = choice_words kind_num.to_i
+          end
         when String
           p
         end

@@ -44,4 +44,10 @@ describe SimpleMunou do
     munou.words = [["foo", 1], ["bar", 2]]
     expect(munou.valid_words(-1).size).to eq 2
   end
+
+  it 'can set valiable' do
+    munou = [:x_1, " is ", :x_1]
+    munou.words = [["foo", 1]]
+    expect(munou.say).to eq "foo is foo"
+  end
 end
