@@ -20,7 +20,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+### Example
+
+```ruby
+munou = [1, "is", 1].to_munou
+munou.words = [["foo", 1], ["bar", 1]]
+munou.say # => "foo is bar" or "bar is foo" or ...
+```
+
+### Pattern
+
+Use Array Object.
+
+```ruby
+munou = [1, "is", 1].to_munou
+```
+
+Fixnum means kind of number.
+If you use same words, symbol is useful.
+
+```ruby
+munou = [:x_1, "is", :x_1]
+```
+
+Symbol is key and kind of number. example :x_1, key is x, and type is 1.
+If use all word, use -1.
+
+### Word
+
+`words=` modify 2 size arrays to word objects. 
+
+```ruby
+munou.words = [["foo", 1], SimpleMunou::Word.new("bar", 2)]
+```
 
 ## Contributing
 
