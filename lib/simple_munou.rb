@@ -32,8 +32,9 @@ module SimpleMunou
       end
     end
 
-    def say
-      @variables = {}
+    def say(variables = nil)
+      @variables = variables
+      @variables = {} if @variables.nil?
       @pattern.map do |p|
         case p
         when Fixnum
